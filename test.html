@@ -1,0 +1,22 @@
+<html>
+
+<body>
+    <form action="upload_handler.php" enctype="multipart/form-data" method="post">
+        Select data set to upload (format data set w/ Y's in last column):
+        <input type="file" name="fileToUpload" id="fileToUpload">
+        <input type="submit" value="Upload" name="submit">
+    </form>
+
+    <p>Select Models to Test</p>
+    <select>
+        <option value="volvo">SVM</option>
+        <option value="saab">Linear Regression</option>
+        <option value="opel"></option>
+        <option value="audi"></option>
+    </select>
+
+    <br>
+    <input type="submit" value="Generate" name="submit">
+</body>
+
+</html>
