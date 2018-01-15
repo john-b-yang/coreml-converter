@@ -1,6 +1,17 @@
 <html>
 
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="John Yang">
+    <meta name="description" content="Programming technicalities and musings">
+
+    <title>CoreML Converter</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
 <body>
+    <h3> CoreML Converter </h3>
     <form action="upload_handler.php" enctype="multipart/form-data" method="post">
         Select data set to upload (format data set w/ Y's in last column):
         <input type="file" name="fileToUpload" id="fileToUpload">
@@ -9,10 +20,9 @@
 
     <p>Select Models to Test</p>
     <select>
-        <option value="volvo">SVM</option>
-        <option value="saab">Linear Regression</option>
-        <option value="opel"></option>
-        <option value="audi"></option>
+        <option value="SVM">SVM</option>
+        <option value="LR">Linear Regression</option>
+        <option value="DecTree">Decision Trees</option>
     </select>
 
     <br>
