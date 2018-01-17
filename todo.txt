@@ -1,9 +1,11 @@
 To Do's:
 - Fill in basic UI functions (i.e. place buttons, labels in the correct positions)
 - Figure out how to upload files to a server
-- Begin writing python script to process data based on parameters
 - Figure out how to download files to a user
 - Wireframe different categories for different ML problems (classification, prediction, etc.)
+
+In Process:
+- Begin writing python script to process data based on parameters
 
 Completed:
 
