@@ -3,10 +3,22 @@ To Do's:
 - Figure out how to upload files to a server
 - Figure out how to download files to a user
 - Wireframe different categories for different ML problems (classification, prediction, etc.)
+- Create Core ML Model
 
 In Process:
-- Begin writing python script to process data based on parameters
+- Function that takes in raw confusion matrix + classification report strings and makes them human readable
+- Convert to CoreML mlmodel file given 1. model 2. data set
 
 Completed:
+- Begin writing python script to process data based on parameters
+    * Better to ask user for what 'Y' Column is, as opposed to forcing formatting to first column
+    * Be careful of "Unnamed: 0" column, generated as a result of preserving index in original CSV
+    * Use the DS100 Environment
+    * python -W ignore -B script.py (ignore warnings + don't generate compiled pyc files)
+    * Titanic Sample Entry:
+        x Enter path pointing to data file: ./test_sets/titanic_data_filtered.csv
+        x Enter test split percentage: 50
+        x Enter models to test, separated by spaces: knn decision-trees svc random-forest gradient-boosted
+        x Enter column name of Y/Label data: Survived
 
 Tips & Tricks:
