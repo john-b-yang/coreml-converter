@@ -19,21 +19,13 @@
     </form>
 
     <h4>Select Models to Test</h4>
-    <input type="checkbox" id="svc" name="svc" value="svc">
-    <label for="svc">Support Vector Classifier</label>
-    <br>
-    <input type="checkbox" id="knn" name="knn" value="knn">
-    <label for="knn">K-Nearest Neighbors</label>
-    <br>
-    <input type="checkbox" id="decision-trees" name="decision-trees" value="decision-trees">
-    <label for="decision-trees">Decision Tree Classifier</label>
-    <br>
-    <input type="checkbox" id="random-forest" name="random-forest" value="random-forest">
-    <label for="random-forest">Random Forest Classifier</label>
-    <br>
-    <input type="checkbox" id="gradient-boosted" name="gradient-boosted" value="gradient-boosted">
-    <label for="gradient-boosted">Gradient Boosted Classifier</label>
-    <br>
+    <form>
+      <input type="radio" value="svc"> Support Vector Classifier<br>
+      <input type="radio" value="knn"> K Nearest Neighbors<br>
+      <input type="radio" value="decision-trees"> Decision Trees Classifier<br>
+      <input type="radio" value="random-forest"> Random Forest Classifier<br>
+      <input type="radio" value="gradient-boosted"> Gradient Boosted Classifier<br>
+    </form>
 
     <h4>Specify Train/Test Split:</h4>
     <p>Enter Decimal Value (i.e. 0.4 means 40% of data is for training and 60% is for testing)</p>
