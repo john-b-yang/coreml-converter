@@ -26,6 +26,7 @@ Tips & Tricks:
     * The method is not allowed for the requested URL. (http://bit.ly/2DuxIJT)
     * The browser (or proxy) sent a request that this server could not understand.
     * Form Sending Issues: http://bit.ly/2Do2rVs
+    * Flash (Delayed Messaging): http://flask.pocoo.org/docs/0.12/patterns/flashing/
 - 'Form' tag (HTML)
     * value: what's displayed on/in the field
     * name: the alias for the value of that input field

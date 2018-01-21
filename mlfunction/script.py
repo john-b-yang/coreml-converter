@@ -16,6 +16,10 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report, confusion_matrix
 from sklearn.pipeline import Pipeline
 
+# Suppress Warnings
+import warnings
+warnings.filterwarnings('ignore')
+
 def conversion(data_file, split_ratio, user_models, y_data_column):
     split_ratio = float(split_ratio) if float(split_ratio )< 1 else int(split_ratio)/100
 
@@ -55,6 +59,7 @@ def conversion(data_file, split_ratio, user_models, y_data_column):
 
     # Step 3: Test Selected Models, Save results in txt file, Output Ranking
     output_text_file = open('output.txt', 'w')
+    return_value = ""
     count = 0
     for index in range(len(requested_pipelines)):
         pipeline = requested_pipelines[index]
@@ -65,13 +70,15 @@ def conversion(data_file, split_ratio, user_models, y_data_column):
         report = classification_report(Y_test, Y_predict)
         matrix = confusion_matrix(Y_test, Y_predict)
 
-        output_text_file.write("Model: %s\n" % requested_models_filtered[index])
-        output_text_file.write("Classification Report: \n%s\n" % report)
-        output_text_file.write("Confusion Matrix: \n%s\n" % matrix)
-        output_text_file.write("\n\n")
+        return_value += str("Model: %s\n" % requested_models_filtered[index])
+        return_value += str("Classification Report: \n%s\n" % report)
+        return_value += str("Confusion Matrix: \n%s\n\n\n" % matrix)
+
+        output_text_file.write(return_value)
         count = count + 1
 
     output_text_file.close()
+    return return_value
 
 def convertToCoreML():
     return 'not complete'

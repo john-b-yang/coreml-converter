@@ -12,17 +12,101 @@ Confusion Matrix:
  [ 79  67]]
 
 
+Model: knn
+Classification Report: 
+             precision    recall  f1-score   support
+
+          0       0.65      0.69      0.67       211
+          1       0.51      0.46      0.48       146
+
+avg / total       0.59      0.60      0.59       357
+
+Confusion Matrix: 
+[[146  65]
+ [ 79  67]]
+
+
 Model: decision-trees
 Classification Report: 
              precision    recall  f1-score   support
 
-          0       0.70      0.69      0.69       211
-          1       0.56      0.57      0.56       146
+          0       0.70      0.70      0.70       211
+          1       0.56      0.57      0.57       146
 
 avg / total       0.64      0.64      0.64       357
 
 Confusion Matrix: 
-[[145  66]
+[[147  64]
+ [ 63  83]]
+
+
+Model: knn
+Classification Report: 
+             precision    recall  f1-score   support
+
+          0       0.65      0.69      0.67       211
+          1       0.51      0.46      0.48       146
+
+avg / total       0.59      0.60      0.59       357
+
+Confusion Matrix: 
+[[146  65]
+ [ 79  67]]
+
+
+Model: decision-trees
+Classification Report: 
+             precision    recall  f1-score   support
+
+          0       0.70      0.70      0.70       211
+          1       0.56      0.57      0.57       146
+
+avg / total       0.64      0.64      0.64       357
+
+Confusion Matrix: 
+[[147  64]
+ [ 63  83]]
+
+
+Model: svc
+Classification Report: 
+             precision    recall  f1-score   support
+
+          0       0.63      0.81      0.71       211
+          1       0.52      0.31      0.39       146
+
+avg / total       0.58      0.60      0.58       357
+
+Confusion Matrix: 
+[[170  41]
+ [101  45]]
+
+
+Model: knn
+Classification Report: 
+             precision    recall  f1-score   support
+
+          0       0.65      0.69      0.67       211
+          1       0.51      0.46      0.48       146
+
+avg / total       0.59      0.60      0.59       357
+
+Confusion Matrix: 
+[[146  65]
+ [ 79  67]]
+
+
+Model: decision-trees
+Classification Report: 
+             precision    recall  f1-score   support
+
+          0       0.70      0.70      0.70       211
+          1       0.56      0.57      0.57       146
+
+avg / total       0.64      0.64      0.64       357
+
+Confusion Matrix: 
+[[147  64]
  [ 63  83]]
 
 
@@ -44,14 +128,70 @@ Model: random-forest
 Classification Report: 
              precision    recall  f1-score   support
 
-          0       0.70      0.74      0.72       211
-          1       0.59      0.55      0.57       146
+          0       0.68      0.74      0.71       211
+          1       0.57      0.50      0.53       146
 
-avg / total       0.66      0.66      0.66       357
+avg / total       0.64      0.64      0.64       357
 
 Confusion Matrix: 
-[[156  55]
- [ 66  80]]
+[[157  54]
+ [ 73  73]]
+
+
+Model: knn
+Classification Report: 
+             precision    recall  f1-score   support
+
+          0       0.65      0.69      0.67       211
+          1       0.51      0.46      0.48       146
+
+avg / total       0.59      0.60      0.59       357
+
+Confusion Matrix: 
+[[146  65]
+ [ 79  67]]
+
+
+Model: decision-trees
+Classification Report: 
+             precision    recall  f1-score   support
+
+          0       0.70      0.70      0.70       211
+          1       0.56      0.57      0.57       146
+
+avg / total       0.64      0.64      0.64       357
+
+Confusion Matrix: 
+[[147  64]
+ [ 63  83]]
+
+
+Model: svc
+Classification Report: 
+             precision    recall  f1-score   support
+
+          0       0.63      0.81      0.71       211
+          1       0.52      0.31      0.39       146
+
+avg / total       0.58      0.60      0.58       357
+
+Confusion Matrix: 
+[[170  41]
+ [101  45]]
+
+
+Model: random-forest
+Classification Report: 
+             precision    recall  f1-score   support
+
+          0       0.68      0.74      0.71       211
+          1       0.57      0.50      0.53       146
+
+avg / total       0.64      0.64      0.64       357
+
+Confusion Matrix: 
+[[157  54]
+ [ 73  73]]
 
 
 Model: gradient-boosted

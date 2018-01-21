@@ -23,23 +23,25 @@ def upload_file():
 
 @app.route('/generate', methods=['POST'])
 def generate_results():
+    params = list(request.form.values())
+
     if 'csv' in request.files:
         print(list(request.files))
         file = request.files['csv']
         f = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
         file.save(f)
-        print("Path: {0}, File Name: {1}".format(file.filename, f))
+        print("File Name: {0}, Path: {1}".format(file.filename, f))
     else:
         flash("Test Message 1")
 
-    print(list(request.form.values()))
+    print(params)
     split = request.form['split']
     y_col = request.form['label']
     print("Split: {0}. Y-Col: {1}".format(split, y_col))
 
     returnIndex = False
 
-    intersects = bool(set(['svc', 'knn', 'decision-trees', 'random-forest', 'gradient-boosted']).intersection(list(request.form.values())))
+    intersects = bool(set(['svc', 'knn', 'decision-trees', 'random-forest', 'gradient-boosted']).intersection(params))
     if not intersects:
         returnIndex = True
         flash('Please select at least one model to test')
@@ -55,6 +57,8 @@ def generate_results():
     if returnIndex:
         return redirect(url_for('index'))
     else:
+        result = conversion(f, split, str(params), y_col)
+        print("Results: %s" % result)
         return render_template('results.html')
 
 if __name__ == '__main__':
