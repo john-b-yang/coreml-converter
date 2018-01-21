@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, request, flash, url_for
+from flask import Flask, render_template, request, flash, url_for, redirect
 from mlfunction.script import conversion
 
 app = Flask(__name__)
@@ -9,7 +9,7 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.secret_key = 'testkey'
 
 @app.route('/')
-def hello_world():
+def index():
     return render_template('index.html')
 
 @app.route('/upload', methods=['POST'])
@@ -37,25 +37,23 @@ def generate_results():
     y_col = request.form['label']
     print("Split: {0}. Y-Col: {1}".format(split, y_col))
 
-    modelError = False
-    splitError = False
-    labelError = False
     returnIndex = False
 
-    if not all(x in ['svc', 'knn', 'decision-trees', 'random-forest', 'gradient-boosted'] for x in list(request.form.values())):
-        modelError = True
+    intersects = bool(set(['svc', 'knn', 'decision-trees', 'random-forest', 'gradient-boosted']).intersection(list(request.form.values())))
+    if not intersects:
         returnIndex = True
+        flash('Please select at least one model to test')
 
     if not split:
-        splitError = True
         returnIndex = True
+        flash('Please remember to enter a split value')
 
     if not y_col:
-        labelError = True
         returnIndex = True
+        flash('Please enter the name of the column containing label data')
 
     if returnIndex:
-        return render_template('index.html', splitError=splitError, labelError=labelError, modelError=modelError)
+        return redirect(url_for('index'))
     else:
         return render_template('results.html')
 
