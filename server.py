@@ -22,6 +22,11 @@ def upload_file():
 
 @app.route('/generate', methods=['POST'])
 def generate_results():
+    print(list(request.form.values()))
+    print(type(request.form))
+    split = request.form['split']
+    y_col = request.form['label']
+    print("Split: {0}. Y-Col: {1}".format(split, y_col))
     return render_template('results.html')
 
 if __name__ == '__main__':

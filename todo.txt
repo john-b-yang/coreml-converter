@@ -22,3 +22,9 @@ Completed:
         x Enter column name of Y/Label data: Survived
 
 Tips & Tricks:
+- Errors:
+    * The method is not allowed for the requested URL.
+    * The browser (or proxy) sent a request that this server could not understand.
+- 'Form' tag (HTML)
+    * value: what's displayed on/in the field
+    * name: the alias for the value of that input field
