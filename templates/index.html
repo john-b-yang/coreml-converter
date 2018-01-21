@@ -11,13 +11,14 @@
 
 <body>
     <h2> CoreML Converter </h2>
-    <form action="/upload" enctype="multipart/form-data" method="post">
-        <h4>Select data set to upload:</h4>
-        <input type="file" name="csv">
+    <!-- <form action="/upload" enctype="multipart/form-data" method="post">
         <input type="submit" value="Upload">
-    </form>
+    </form> -->
 
     <form action="/generate" enctype="multipart/form-data" method="POST">
+        <h4>Select data set to upload:</h4>
+        <input type="file" name="csv">
+
         <h4>Select Models to Test</h4>
         <input type="checkbox" name="svc" value="svc"> Support Vector Classifier<br>
         <input type="checkbox" name="knn" value="knn"> K Nearest Neighbors<br>

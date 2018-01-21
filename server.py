@@ -1,6 +1,6 @@
 import os
 from flask import Flask, render_template, request
-
+from mlfunction.script import conversion
 
 app = Flask(__name__)
 
@@ -27,6 +27,12 @@ def generate_results():
     split = request.form['split']
     y_col = request.form['label']
     print("Split: {0}. Y-Col: {1}".format(split, y_col))
+
+    file = request.files['csv']
+    f = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
+    file.save(f)
+    print("Path: {0}, File Name: {1}".format(file.filename, f))
+
     return render_template('results.html')
 
 if __name__ == '__main__':
