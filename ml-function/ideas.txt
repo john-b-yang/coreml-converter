@@ -1,0 +1,43 @@
+Products
+- Create front end iOS applications for popular web apps that don't have ones (Github)
+- Create common use MLModel files, deployed on Github
+- Create/Replicate apps that utilize mlmodels, making them better compared to their server based predecessors
+- Take Series 7 Exam
+- Online Photo Storage is very overwhelming, more organization please
+- Write a blog
+	x Why Design needs more context
+	x Rationalism vs. Empiricism in CS
+	x NBA Hackathon Application
+- Data Science Project w/ Ryan, Avery
+- Hackathons w/ Gokul
+- Save + Convert Text Messages => Story?
+- Underwater Headphones
+- Better Storage Format for always open tabs?
+- Scrollable, movable photo booth
+- Journey of the Hero + Airbnb’s experience
+- Masters of Scale + Humanity of Technology
+- Dynamically updating presentations: i.e. updates "date" of presentation to current day, instead of having to edit is
+- Paper Signals! - https://www.producthunt.com/posts/paper-signals-by-google
+- Collage HTML generator, send in pictures, API returns code of pics organized in collage
+- Creating an API? Or Python Package
+- Automated CoreML / ML Model Tester Website
+- Atom Package that walks through your code by highlighting steps in order of execution
+- Create Google Assistant version of NBA Trivia Alexa Game
+
+Studies
+- Cryptocurrency (Book + Blockchain @ Berkeley)
+- 170, 188 (Coursera?) Textbooks
+- Medium: Data Science
+
+Blog Posts
+- Experiences of Apple, a microcosm of a macroscopic world (intro with macro pictures. Creating impact isn't always as grand as it seems (working in a cubicle, influence $$$ in sales a bit ironic. Scale much bigger than before (# of people, dollars). Get to see up close, the good and bad intricacies.
+- SWE is not always the good guy. Warriors (Bay Area), we see as basketball legend - others = lack of parity. Facebook content management job. Contextualization is important (Facebook essay).
+- First internship: 1. Core Tenants (experience [projects], perseverance, enthusiasm, treating every interview the same) 2. Approach as a candidate: [a. 1 trick pony (iOS dev.) b. purpose (KBCP, HackNY Fellows, Google EP) c. all around all star (Google)] 3. What doesn't work: "willing to learn" <<< skills
+- CoreML tutorial, how to implement basic ML algos. Compare the speed of CoreML vs. non CoreML models?
+- Jacob Halls Maker Space Equipment Tutorials (3d printing, laser cutting)
+- MNIST Machine learned vs. Deep Learned
+- Alexa Lambda vs. Dialogflow Google Cloud Functions - Developer's Perspective
+
+Completed!
+- Deep Learning Book
+- Daily UI Design (Min. 50)
