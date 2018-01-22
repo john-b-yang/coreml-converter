@@ -35,10 +35,13 @@ def conversion(data_file, split_ratio, user_models, y_data_column):
 
     print("Test Train Split Successful?: ", X_train.shape, " ", X_test.shape, " ", Y_train.shape, " ", Y_test.shape)
     # Step 2: Build testing pipeline based on user selected data sets
+    print("User Models Requested: ", user_models, " | type: ", type(user_models))
+    # MARK: HELLO HELLO ^^^^user_models is a string, but looks like an array?
     requested_models = user_models.split()
     requested_models = [x.lower() for x in requested_models]
+    # requested_models = eval(requested_models)
 
-    available_models = ['svc', 'knn', 'decision-trees', 'random-forest', 'gradient-boosted']
+    available_models = ["svc", "knn", "decision-trees", "random-forest", "gradient-boosted"]
 
     svc = Pipeline([('clf', SVC())])
     knn = Pipeline([('clf', KNeighborsClassifier(n_neighbors=3))])
@@ -53,16 +56,22 @@ def conversion(data_file, split_ratio, user_models, y_data_column):
     # 2. If available, append the model's name to an array
     # 3. Then, append the model's corresponding pipeline to the requested_pipelines array
     # *Note* requested_models_filtered & requested_pipelines should be same length
+    print("Filtering\n-------")
+    print("Available models: ", available_models, "\n-------")
+    print("Requested models: ", requested_models, "\n-------")
     requested_pipelines = []
     requested_models_filtered = []
     for model in requested_models:
-        if model in available_models:
+        model = model.strip('"')
+        membership = str(model) in available_models
+        print(model, " Available? - ", membership, " | Type Comparison: ", type(model), " vs. ", type(requested_models[0]))
+        if membership:
             requested_models_filtered.append(model)
             requested_pipelines.append(available_pipelines[available_models.index(model)])
 
     print("Requested Pipelines: ", requested_pipelines)
     print("Requested Models Filtered: ", requested_models_filtered)
-    
+
     # Step 3: Test Selected Models, Save results in txt file, Output Ranking
     output_text_file = open('output.txt', 'w')
     return_value = ""
