@@ -25,12 +25,15 @@ def conversion(data_file, split_ratio, user_models, y_data_column):
 
     # Step 1: Import user data, put into data frame, create test/train split data
     raw_data = open(data_file, 'r')
+    print("Raw Data Import Successful?: ", raw_data)
     data_frame = pd.read_csv(data_file, index_col=0) # Removing index column
     y_data = data_frame[[y_data_column]]
     x_data = data_frame.drop(axis=1, labels=[y_data_column])
+    print("Converted to Data Frame Successfully?\nY: ", y_data.shape, "\nX:", x_data.shape, "\n")
 
     X_train, X_test, Y_train, Y_test = train_test_split(x_data, y_data, train_size=split_ratio, random_state=0)
 
+    print("Test Train Split Successful?: ", X_train.shape, " ", X_test.shape, " ", Y_train.shape, " ", Y_test.shape)
     # Step 2: Build testing pipeline based on user selected data sets
     requested_models = user_models.split()
     requested_models = [x.lower() for x in requested_models]
@@ -57,6 +60,9 @@ def conversion(data_file, split_ratio, user_models, y_data_column):
             requested_models_filtered.append(model)
             requested_pipelines.append(available_pipelines[available_models.index(model)])
 
+    print("Requested Pipelines: ", requested_pipelines)
+    print("Requested Models Filtered: ", requested_models_filtered)
+    
     # Step 3: Test Selected Models, Save results in txt file, Output Ranking
     output_text_file = open('output.txt', 'w')
     return_value = ""
@@ -77,6 +83,7 @@ def conversion(data_file, split_ratio, user_models, y_data_column):
         output_text_file.write(return_value)
         count = count + 1
 
+    print(return_value)
     output_text_file.close()
     return return_value
 
