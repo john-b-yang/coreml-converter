@@ -89,10 +89,9 @@ def conversion(data_file, split_ratio, user_models, y_data_column):
         return_value += str("Classification Report: \n%s\n" % report)
         return_value += str("Confusion Matrix: \n%s\n\n\n" % matrix)
 
-        output_text_file.write(return_value)
         count = count + 1
-
-    print(return_value)
+        
+    output_text_file.write(return_value)
     output_text_file.close()
     return return_value
 

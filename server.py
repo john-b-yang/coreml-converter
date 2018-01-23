@@ -26,7 +26,7 @@ def generate_results():
     params = list(request.form.values())
 
     if 'csv' in request.files:
-        print(list(request.files))
+        # print(list(request.files))
         file = request.files['csv']
         f = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
         file.save(f)
@@ -57,7 +57,8 @@ def generate_results():
     if returnIndex:
         return redirect(url_for('index'))
     else:
-        result = conversion(f, split, str(params), y_col)
+        str_params = " ".join(params)
+        result = conversion(f, split, str_params, y_col)
         print("Results: %s" % result)
         return render_template('results.html')
 
