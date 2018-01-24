@@ -1,4 +1,4 @@
-import os
+import os, shutil
 from flask import Flask, render_template, request, flash, url_for, redirect
 from mlfunction.script import conversion
 
@@ -8,6 +8,14 @@ UPLOAD_FOLDER = os.path.basename('uploads')
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.secret_key = 'testkey'
 
+# Functionalities
+def line_prepender(filename, line):
+    with open(filename, 'r+') as f:
+        content = f.read()
+        f.seek(0, 0)
+        f.write(line.rstrip('\r\n') + '\n' + content)
+
+# Routing
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -60,6 +68,15 @@ def generate_results():
         str_params = " ".join(params)
         result = conversion(f, split, str_params, y_col)
         print("Results: %s" % result)
+
+        # Assuming output.txt is created, duplicate the file and reconfigure for display
+        duplicate = open('output2.txt', 'w')
+        shutil.copyfile('output.txt', 'output2.txt')
+        line_prepender('output2.txt', '<link href="txtstyle.css" rel="stylesheet" type="text/css" />')
+        os.rename('output2.txt', 'output.html')
+        shutil.copy('output.html', 'templates')
+        os.remove('output.html')
+
         return render_template('results.html')
 
 if __name__ == '__main__':
