@@ -3,21 +3,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="author" content="John Yang">
-    <meta name="description" content="Programming technicalities and musings">
+    <meta name="description" content="Automating the CoreML Conversion process">
 
     <title>CoreML Converter</title>
     <link rel="stylesheet" type="text/css" href="/static/css/style.css">
 </head>
 
 <body>
-    <h2> CoreML Converter </h2>
-    {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            {% for message in messages %}
-                <p style="color:red;">{{ message }}</p>
-            {% endfor %}
-        {% endif %}
-    {% endwith %}
+    <h2> CoreML Converter </h2> {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+    <p style="color:red;">{{ message }}</p>
+    {% endfor %} {% endif %} {% endwith %}
     <form action="/generate" enctype="multipart/form-data" method="POST">
         <h4>Select data set to upload:</h4>
         <input type="file" name="csv">
@@ -40,6 +35,10 @@
 
         <input type="submit" value="Generate">
     </form>
+    <hr>
+    <h4>Need a little help?</h4>
+    <p>Try it out with this data set <a href="/mlfunction/test_set/titanic_data_filtered.csv" download>here</a>! Select any "Models" to test and specify a Train/Test split value. For the Label/Prediction Column Name, put down "Survived". Click generate and
+        the webpage will "generate" an analysis of the accuracy of each model towards classifying each data set.</p>
 </body>
 
 </html>
