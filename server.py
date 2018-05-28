@@ -73,6 +73,8 @@ def generate_results():
         duplicate = open('output2.txt', 'w')
         shutil.copyfile('output.txt', 'output2.txt')
         line_prepender('output2.txt', '<link href="txtstyle.css" rel="stylesheet" type="text/css" />')
+
+        # Converting txt file into html file and moving it into templates directory
         os.rename('output2.txt', 'output.html')
         shutil.copy('output.html', 'templates')
         os.remove('output.html')
