@@ -12,17 +12,17 @@ Confusion Matrix:
  [ 79  67]]
 
 
-Model: decision-trees
+Model: random-forest
 Classification Report: 
              precision    recall  f1-score   support
 
-          0       0.70      0.69      0.70       211
-          1       0.56      0.57      0.56       146
+          0       0.71      0.77      0.74       211
+          1       0.62      0.55      0.59       146
 
-avg / total       0.64      0.64      0.64       357
+avg / total       0.68      0.68      0.68       357
 
 Confusion Matrix: 
-[[146  65]
- [ 63  83]]
+[[162  49]
+ [ 65  81]]
 
 
