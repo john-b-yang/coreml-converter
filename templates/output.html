@@ -1,43 +1,43 @@
 <link href="txtstyle.css" rel="stylesheet" type="text/css" />
-Model: svc
+Model: knn
 Classification Report: 
              precision    recall  f1-score   support
 
-          0       0.63      0.81      0.71       211
-          1       0.52      0.31      0.39       146
+          0       0.65      0.69      0.67       211
+          1       0.51      0.46      0.48       146
 
-avg / total       0.58      0.60      0.58       357
+avg / total       0.59      0.60      0.59       357
 
 Confusion Matrix: 
-[[170  41]
- [101  45]]
+[[146  65]
+ [ 79  67]]
+
+
+Model: decision-trees
+Classification Report: 
+             precision    recall  f1-score   support
+
+          0       0.71      0.69      0.70       211
+          1       0.57      0.58      0.57       146
+
+avg / total       0.65      0.65      0.65       357
+
+Confusion Matrix: 
+[[146  65]
+ [ 61  85]]
 
 
 Model: random-forest
 Classification Report: 
              precision    recall  f1-score   support
 
-          0       0.69      0.71      0.70       211
-          1       0.56      0.53      0.55       146
+          0       0.66      0.73      0.69       211
+          1       0.54      0.46      0.50       146
 
-avg / total       0.63      0.64      0.63       357
-
-Confusion Matrix: 
-[[149  62]
- [ 68  78]]
-
-
-Model: gradient-boosted
-Classification Report: 
-             precision    recall  f1-score   support
-
-          0       0.71      0.75      0.73       211
-          1       0.61      0.56      0.58       146
-
-avg / total       0.67      0.67      0.67       357
+avg / total       0.61      0.62      0.61       357
 
 Confusion Matrix: 
-[[158  53]
- [ 64  82]]
+[[154  57]
+ [ 79  67]]
 
 
