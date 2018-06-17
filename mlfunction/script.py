@@ -37,9 +37,7 @@ def conversion(data_file, split_ratio, user_models, y_data_column):
     # Step 2: Build testing pipeline based on user selected data sets
     print("User Models Requested: ", user_models, " | type: ", type(user_models))
     # MARK: HELLO HELLO ^^^^user_models is a string, but looks like an array?
-    requested_models = user_models.split()
-    requested_models = [x.lower() for x in requested_models]
-    # requested_models = eval(requested_models)
+    requested_models = [x.lower() for x in user_models.split()]
 
     available_models = ["svc", "knn", "decision-trees", "random-forest", "gradient-boosted"]
 
@@ -54,9 +52,8 @@ def conversion(data_file, split_ratio, user_models, y_data_column):
     # Logic:
     # 1. Check if requested model is part of available models
     # 2. If available, append the model's name to an array
-    # 3. Then, append the model's corresponding pipeline to the requested_pipelines array
+    # 3. Append the model's corresponding pipeline to the requested_pipelines array
     # *Note* requested_models_filtered & requested_pipelines should be same length
-    print("Filtering\n-------")
     print("Available models: ", available_models, "\n-------")
     print("Requested models: ", requested_models, "\n-------")
     requested_pipelines = []
@@ -68,9 +65,6 @@ def conversion(data_file, split_ratio, user_models, y_data_column):
         if membership:
             requested_models_filtered.append(model)
             requested_pipelines.append(available_pipelines[available_models.index(model)])
-
-    print("Requested Pipelines: ", requested_pipelines)
-    print("Requested Models Filtered: ", requested_models_filtered)
 
     # Step 3: Test Selected Models, Save results in txt file, Output Ranking
     output_text_file = open('output.txt', 'w')
@@ -90,13 +84,10 @@ def conversion(data_file, split_ratio, user_models, y_data_column):
         return_value += str("Confusion Matrix: \n%s\n\n\n" % matrix)
 
         count = count + 1
-        
+
     output_text_file.write(return_value)
     output_text_file.close()
     return return_value
-
-def convertToCoreML():
-    return 'not complete'
 
 if __name__ == '__main__':
     data_file_path = input("Enter path pointing to data file: ")
