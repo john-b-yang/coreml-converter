@@ -1,8 +1,19 @@
-import coremltools
+# Sklearn Models
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.svm import LinearSVC, SVC
+from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.tree import DecisionTreeClassifier
+
+# Pipeline for Testing
+from sklearn.pipeline import Pipeline
+
+# Unit Test Module
+import unittest
 
 # Responsible for converting selected ML models + datasets => CoreML file
 def convertToCoreML():
-
+    return 0
 
 # Retrieve correct ML Models based on user query
 #
@@ -33,6 +44,10 @@ def getMLModels(requested_models):
 
     return (pipelines, models_filtered)
 
+# MARK: Unit Tests
+def test_getMLModels():
+    return 'TODO'
+
 if __name__ == '__main__':
     # Unit Tests
-    print("Todo")
+    unittest.main()
