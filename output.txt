@@ -16,13 +16,13 @@ Model: decision-trees
 Classification Report: 
              precision    recall  f1-score   support
 
-          0       0.70      0.69      0.70       211
-          1       0.56      0.57      0.56       146
+          0       0.70      0.70      0.70       211
+          1       0.56      0.56      0.56       146
 
 avg / total       0.64      0.64      0.64       357
 
 Confusion Matrix: 
-[[146  65]
- [ 63  83]]
+[[147  64]
+ [ 64  82]]
 
 
